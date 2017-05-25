@@ -1,7 +1,7 @@
 """A prefix-notation calculator.
 
-Using the arithmetic.py file from Calculator Part 1, create the
-calculator program yourself in this file.
+Using the arithmetic.py file, we created a prefix
+calculator program.
 """
 
 from arithmetic import *
@@ -17,8 +17,59 @@ print "'division' equals '/' "
 print "'power' equals 'pow' "
 print "'cube' equals 'cube' "
 print "'modulo' equals 'mod' "
-print "'square' equals 'square' "
+print "'square' equals 'square' \n"
 
+
+
+
+while True:
+    user_input = raw_input("> ")
+
+    tokenize_user_list = user_input.split(" ")
+
+    first_token = tokenize_user_list[0]
+
+    second_token = int(tokenize_user_list[1])
+
+    if len(tokenize_user_list) == 3:
+        third_token = int(tokenize_user_list[2])
+
+    if user_input.lower() == "q" or  user_input.lower() == "quit":
+        break
+
+
+    if first_token == "+":
+        print add(second_token, third_token)
+
+    elif first_token == "-":
+        print subtract(second_token, third_token)
+
+    elif first_token == "*":
+        print multiply(second_token, third_token)
+
+    elif first_token == "/":
+        print divide(second_token, third_token)
+
+    elif first_token == "square":
+        print square(second_token)
+ 
+    elif first_token == "cube":
+        print cube(second_token)
+
+    elif first_token == "pow":
+        print power(second_token, third_token)
+
+    elif first_token == "mod":
+        print mod(second_token, third_token)
+
+    else:
+        print "That's invalid."
+
+  
+
+
+
+### This Is Our Pseudo Code:
 
 # while loop
 # user input, 
@@ -29,23 +80,5 @@ print "'square' equals 'square' "
 # if pow run the function
 #determine what operators from first token index  what function to use
 #then run funct
+# use dictionaries. optipnal
 # quit
-
-while True:
-    user_input = raw_input("> ")
-    tokenize_user_input = user_input.split(" ")
-    first_token = tokenize_user_input[0]
-    second_token = int(tokenize_user_input[1])
-    third_token = int(tokenize_user_input[2])
-
-
-    if first_token == "+":
-        total_sum = add(second_token, third_token)
-        print total_sum
-     
-
-
-    if user_input.lower() == "q" or  user_input.lower() == "quit":
-        break
-
-# Your code goes here
